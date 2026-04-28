@@ -16,37 +16,37 @@
       --yellow: #ffcc00;
       --blue: #3366ff;
       --green: #00e676;
-      
+
       --border: 3px solid var(--ink);
       --shadow: 6px 6px 0px var(--ink);
       --shadow-sm: 3px 3px 0px var(--ink);
       --shadow-hover: 2px 2px 0px var(--ink);
-      
+
       --mono: 'Space Mono', monospace;
       --sans: 'Syne', sans-serif;
       --jp: 'Noto Sans JP', sans-serif;
     }
-    
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; }
-    
+
     body {
       background-color: var(--bg);
       background-image: radial-gradient(var(--ink) 1.5px, transparent 1.5px);
       background-size: 24px 24px;
       color: var(--ink);
-      font-family: var(--jp); 
-      min-height: 100vh; 
+      font-family: var(--jp);
+      min-height: 100vh;
       overflow-x: hidden;
       padding-bottom: 60px;
     }
 
-    /* HEADER */
+    /* ── HEADER ── */
     header {
       position: sticky; top: 0; z-index: 100;
       background: var(--white);
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 60px; 
+      padding: 0 2rem; height: 60px;
       border-bottom: var(--border);
       box-shadow: 0 4px 0px var(--ink);
     }
@@ -54,20 +54,15 @@
       font-family: var(--sans); font-weight: 800; font-size: 1.25rem;
       letter-spacing: 0.05em; text-transform: uppercase;
       display: flex; align-items: center; gap: 0.75rem;
-      background: var(--yellow);
-      padding: 4px 12px;
-      border: 2px solid var(--ink);
-      transform: skew(-5deg);
+      background: var(--yellow); padding: 4px 12px;
+      border: 2px solid var(--ink); transform: skew(-5deg);
     }
     .logo-kanji { font-family: var(--jp); font-size: 1.1rem; }
-    .logo-red { color: var(--red); }
-    
-    .header-status { 
-      display: flex; align-items: center; gap: 0.75rem; 
-      background: var(--white);
-      border: 2px solid var(--ink);
-      padding: 4px 12px;
-      box-shadow: var(--shadow-sm);
+
+    .header-status {
+      display: flex; align-items: center; gap: 0.75rem;
+      background: var(--white); border: 2px solid var(--ink);
+      padding: 4px 12px; box-shadow: var(--shadow-sm);
     }
     .dot {
       width: 12px; height: 12px; border: 2px solid var(--ink);
@@ -81,15 +76,12 @@
       text-transform: uppercase; letter-spacing: 0.05em;
     }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
       background: var(--blue); color: var(--white);
-      margin: 2rem auto;
-      max-width: 680px;
-      padding: 3rem 2rem; 
-      position: relative; overflow: hidden;
-      border: var(--border);
-      box-shadow: var(--shadow);
+      margin: 2rem auto; max-width: 680px;
+      padding: 3rem 2rem; position: relative; overflow: hidden;
+      border: var(--border); box-shadow: var(--shadow);
     }
     .hero::after {
       content: '幻術'; position: absolute; right: -1rem; top: 50%;
@@ -112,22 +104,21 @@
     .hero-sub a { color: var(--red); text-decoration: none; text-transform: uppercase; }
     .hero-sub a:hover { text-decoration: underline; }
 
-    /* TICKER */
-    .ticker { 
-      background: var(--red); overflow: hidden; white-space: nowrap; 
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--red); overflow: hidden; white-space: nowrap;
       padding: 10px 0; border-top: var(--border); border-bottom: var(--border);
-      box-shadow: 0 4px 0px var(--ink);
-      margin-bottom: 2rem;
+      box-shadow: 0 4px 0px var(--ink); margin-bottom: 2rem;
     }
     .ticker-inner {
-      display: inline-block; font-family: var(--mono); font-size: 0.8rem; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase; color: var(--white);
-      text-shadow: 2px 2px 0px var(--ink);
+      display: inline-block; font-family: var(--mono); font-size: 0.8rem;
+      font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--white); text-shadow: 2px 2px 0px var(--ink);
       animation: ticker 20s linear infinite;
     }
     @keyframes ticker { from{transform:translateX(100vw)} to{transform:translateX(-100%)} }
 
-    /* LAYOUT */
+    /* ── LAYOUT ── */
     .container {
       max-width: 680px; margin: 0 auto;
       padding: 0 1.5rem 5rem; position: relative; z-index: 1;
@@ -135,91 +126,127 @@
     .toolbar {
       display: flex; align-items: center; justify-content: space-between;
       margin-bottom: 2rem; padding: 1rem;
-      background: var(--white); border: var(--border);
-      box-shadow: var(--shadow-sm);
+      background: var(--white); border: var(--border); box-shadow: var(--shadow-sm);
     }
     #count-label {
-      font-family: var(--mono); font-size: 0.8rem; font-weight: 700;
-      text-transform: uppercase;
+      font-family: var(--mono); font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
     }
     #refresh-btn {
       background: var(--yellow); border: 2px solid var(--ink); color: var(--ink);
       font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      padding: 8px 16px; cursor: pointer;
-      box-shadow: var(--shadow-sm);
+      padding: 8px 16px; cursor: pointer; box-shadow: var(--shadow-sm);
       transition: all 0.1s; display: flex; align-items: center; gap: 6px;
     }
-    #refresh-btn:hover:not(:disabled) { 
-      transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--ink); 
-      background: var(--white);
+    #refresh-btn:hover:not(:disabled) {
+      transform: translate(2px,2px); box-shadow: 1px 1px 0px var(--ink); background: var(--white);
     }
-    #refresh-btn:disabled { background: #ccc; cursor: not-allowed; transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--ink); }
+    #refresh-btn:disabled { background: #ccc; cursor: not-allowed; transform: translate(2px,2px); box-shadow: 1px 1px 0px var(--ink); }
     .spin { display: inline-block; animation: spin 0.7s linear infinite; }
     @keyframes spin { to{transform:rotate(360deg)} }
 
-    /* STATES */
+    /* ── STATE SCREENS ── */
     .state {
       text-align: center; padding: 4rem 2rem;
       background: var(--white); border: var(--border); box-shadow: var(--shadow);
     }
-    .state-icon { font-size: 3rem; margin-bottom: 1rem; line-height: 1; font-weight: 900;}
+    .state-icon { font-size: 3rem; margin-bottom: 1rem; line-height: 1; font-weight: 900; }
     .state h3 { font-family: var(--sans); font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; }
     .state p  { font-family: var(--mono); font-size: 0.85rem; font-weight: 700; }
     .state p a { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
 
-    #debug-box {
-      display: none; margin-top: 1.5rem;
-      background: var(--ink); color: var(--green);
-      font-family: var(--mono); font-size: 0.75rem; line-height: 1.6;
-      padding: 1rem; text-align: left; word-break: break-all;
-      border: 2px solid var(--red); box-shadow: var(--shadow-sm);
-    }
-
-    /* POSTS */
+    /* ── POSTS ── */
     #feed { display: flex; flex-direction: column; gap: 1.5rem; }
+
     .post {
       background: var(--white); border: var(--border);
       padding: 1.5rem; box-shadow: var(--shadow);
       transition: transform 0.1s, box-shadow 0.1s;
       animation: appear 0.3s ease both;
     }
-    .post:hover { 
-      transform: translate(4px, 4px); 
-      box-shadow: var(--shadow-hover); 
+    .post:hover { transform: translate(4px,4px); box-shadow: var(--shadow-hover); }
+    @keyframes appear { from{opacity:0;transform:scale(0.98) translateY(10px)} to{opacity:1;transform:none} }
+
+    .post-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1rem; border-bottom: 2px solid var(--ink); padding-bottom: 1rem;
     }
-    @keyframes appear { from{opacity:0;transform:scale(0.98) translateY(10px)} to{opacity:1;transform:scale(1) translateY(0)} }
-    
-    .post-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; border-bottom: 2px solid var(--ink); padding-bottom: 1rem; }
     .avatar {
       width: 42px; height: 42px; border: 2px solid var(--ink);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--sans); font-weight: 800; font-size: 1rem;
-      color: var(--ink); flex-shrink: 0; text-transform: uppercase; user-select: none;
-      box-shadow: var(--shadow-sm);
+      color: var(--ink); flex-shrink: 0; text-transform: uppercase;
+      user-select: none; box-shadow: var(--shadow-sm); overflow: hidden;
     }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .author { flex: 1; min-width: 0; }
     .author-name {
       font-family: var(--sans); font-weight: 800; font-size: 1.1rem;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase;
     }
-    .author-handle { 
+    .author-handle {
       font-family: var(--mono); font-size: 0.75rem; font-weight: 700;
-      color: var(--white); background: var(--ink); padding: 2px 6px; display: inline-block; margin-top: 4px;
+      color: var(--white); background: var(--ink);
+      padding: 2px 6px; display: inline-block; margin-top: 4px;
     }
-    .post-body { font-size: 1rem; font-weight: 700; line-height: 1.6; color: var(--ink); word-break: break-word; white-space: pre-wrap; }
+
+    .post-body {
+      font-size: 1rem; font-weight: 700; line-height: 1.6;
+      color: var(--ink); word-break: break-word; white-space: pre-wrap;
+    }
+
+    /* Code block */
+    .post-code {
+      margin-top: 1rem; background: var(--ink); color: var(--green);
+      font-family: var(--mono); font-size: 0.78rem; line-height: 1.6;
+      padding: 1rem; overflow-x: auto; border: 2px solid var(--ink);
+      box-shadow: var(--shadow-sm); white-space: pre; position: relative;
+    }
+    .code-lang {
+      position: absolute; top: 0; right: 0;
+      background: var(--yellow); color: var(--ink);
+      font-family: var(--mono); font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; padding: 2px 8px;
+      border-left: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    }
+
+    /* Media */
+    .post-media {
+      margin-top: 1rem; border: 2px solid var(--ink); box-shadow: var(--shadow-sm);
+      overflow: hidden; line-height: 0;
+    }
+    .post-media img { width: 100%; height: auto; display: block; }
+
+    /* Tags */
+    .post-tags {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem;
+    }
+    .tag {
+      font-family: var(--mono); font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; background: var(--bg);
+      border: 2px solid var(--ink); padding: 2px 8px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Footer row */
     .post-footer {
-      display: flex; align-items: center; justify-content: flex-end;
-      margin-top: 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 1.25rem; padding-top: 1rem; border-top: 2px solid var(--ink);
+      flex-wrap: wrap; gap: 0.75rem;
     }
+    .post-stats {
+      display: flex; gap: 1rem; font-family: var(--mono);
+      font-size: 0.72rem; font-weight: 700;
+    }
+    .stat { display: flex; align-items: center; gap: 4px; }
     .view-btn {
       font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
       color: var(--white); background: var(--blue); border: 2px solid var(--ink);
       padding: 6px 12px; text-decoration: none; box-shadow: 2px 2px 0px var(--ink);
-      transition: all 0.1s;
+      transition: all 0.1s; white-space: nowrap;
     }
-    .view-btn:hover { background: var(--red); transform: translate(1px, 1px); box-shadow: 1px 1px 0px var(--ink); }
+    .view-btn:hover { background: var(--red); transform: translate(1px,1px); box-shadow: 1px 1px 0px var(--ink); }
 
-    /* FOOTER */
+    /* ── FOOTER BAR ── */
     .footer-bar {
       position: fixed; bottom: 0; left: 0; right: 0;
       background: var(--white); color: var(--ink);
@@ -283,97 +310,29 @@
 </div>
 
 <script>
-  const BOT_RENDER = 'https://genjutsu-social.vercel.app/api/bot-render?route=%2F';
-  const SOURCE     = 'https://genjutsu-social.vercel.app';
-  const REFRESH_MS = 60_000;
+  const API      = 'https://genjutsu-social.vercel.app/api/genjutsu-feed';
+  const SOURCE   = 'https://genjutsu-social.vercel.app';
+  const POLL_MS  = 30_000; // poll every 30s using `since`
 
-  const PROXIES = [
-    u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`,
-    u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
-    u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
-  ];
+  let sinceTs   = null; // ISO timestamp for incremental polling
+  let allPosts  = [];   // full post list in memory
 
-  let debugLog = [];
+  // ── FETCH ────────────────────────────────────────────────────────────────
+  async function fetchFeed({ since = null, page = 1, limit = 50 } = {}) {
+    const url = new URL(API);
+    url.searchParams.set('page',  page);
+    url.searchParams.set('limit', limit);
+    if (since) url.searchParams.set('since', since);
 
-  // ── FETCH (OPTIMIZED WITH PROMISE.ANY) ───────────────────────────────────
-  async function fetchProxy(proxyFn, index) {
-    const url = proxyFn(BOT_RENDER);
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000); // 8s timeout to avoid hanging
-    
-    try {
-      const res = await fetch(url, { cache: 'no-store', signal: controller.signal });
-      clearTimeout(timeoutId);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      const ct = res.headers.get('content-type') || '';
-      let html = '';
-
-      if (ct.includes('application/json')) {
-        const j = await res.json();
-        html = j.contents || j.body || JSON.stringify(j);
-      } else {
-        html = await res.text();
-      }
-
-      if (html.length > 300 && (html.includes('View post') || html.includes('/post/'))) {
-        return html; // Return immediately on first valid payload
-      }
-      throw new Error(`Proxy ${index} missing post markers`);
-    } catch (e) {
-      clearTimeout(timeoutId);
-      throw new Error(`Proxy ${index} failed: ${e.message}`);
-    }
+    const res = await fetch(url.toString(), { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error || 'API error');
+    return data;
   }
 
-  async function getHtml() {
-    debugLog = [];
-    try {
-      // Race all proxies concurrently. The first one to return valid HTML wins.
-      const html = await Promise.any(PROXIES.map((p, i) => fetchProxy(p, i)));
-      return html;
-    } catch (aggregateError) {
-      // If Promise.any fails, it means ALL proxies failed.
-      if (aggregateError instanceof AggregateError) {
-        debugLog = aggregateError.errors.map(err => err.message);
-      } else {
-        debugLog.push(aggregateError.message);
-      }
-      throw new Error('All proxies failed.');
-    }
-  }
-
-  // ── PARSE ────────────────────────────────────────────────────────────────
-  function parse(html) {
-    const doc   = new DOMParser().parseFromString(html, 'text/html');
-    const posts = [];
-
-    doc.querySelectorAll('li').forEach(li => {
-      const paras = [...li.querySelectorAll('p')];
-      const link  = li.querySelector('a[href*="/post/"]');
-      if (!paras.length) return;
-
-      const first = paras[0].textContent.trim();
-      const m     = first.match(/^(.+?)\s*\(@([^)]+)\)\s*$/);
-      const name  = m ? m[1].trim() : first;
-      const handle = m ? m[2].trim() : '';
-
-      const body = paras.slice(1).map(p => p.textContent.trim()).filter(Boolean).join('\n');
-      if (!body) return;
-
-      const href   = link ? link.getAttribute('href') : '';
-      const postId = href.split('/post/')[1] || '';
-      const url    = postId ? `${SOURCE}/post/${postId}` : SOURCE;
-
-      posts.push({ name, handle, body, url });
-    });
-
-    return posts;
-  }
-
-  // ── RENDER ───────────────────────────────────────────────────────────────
-  // Brutalist solid colors for avatars
-  const COLORS = ['#ffcc00', '#ff3333', '#3366ff', '#00e676', '#ff99cc', '#00cccc'];
+  // ── RENDER HELPERS ───────────────────────────────────────────────────────
+  const COLORS  = ['#ffcc00','#ff3333','#3366ff','#00e676','#ff99cc','#00cccc'];
 
   function bgColor(s) {
     let h = 0;
@@ -391,21 +350,64 @@
       .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
+  function timeAgo(iso) {
+    const diff = Math.floor((Date.now() - new Date(iso)) / 1000);
+    if (diff < 60)   return `${diff}s ago`;
+    if (diff < 3600) return `${Math.floor(diff/60)}m ago`;
+    return `${Math.floor(diff/3600)}h ago`;
+  }
+
   function card(p, i) {
-    const bg    = bgColor(p.name + p.handle);
-    const delay = (Math.min(i, 5) * 0.05).toFixed(2);
+    const name    = p.profile?.display_name || p.profile?.username || 'unknown';
+    const handle  = p.profile?.username || '';
+    const avatarUrl = p.profile?.avatar_url || '';
+    const bg      = bgColor(name + handle);
+    const delay   = (Math.min(i, 8) * 0.05).toFixed(2);
+    const postUrl = `${SOURCE}/post/${p.id}`;
+
+    const avatarHtml = avatarUrl
+      ? `<img src="${esc(avatarUrl)}" alt="${esc(name)}" loading="lazy" onerror="this.style.display='none'">`
+      : esc(initials(name));
+
+    const codeHtml = p.code ? `
+      <div class="post-code">
+        ${p.code_language ? `<span class="code-lang">${esc(p.code_language)}</span>` : ''}
+        ${esc(p.code)}
+      </div>` : '';
+
+    const mediaHtml = p.media_url ? `
+      <div class="post-media">
+        <img src="${esc(p.media_url)}" alt="post media" loading="lazy">
+      </div>` : '';
+
+    const tagsHtml = p.tags && p.tags.length ? `
+      <div class="post-tags">
+        ${p.tags.map(t => `<span class="tag">#${esc(t)}</span>`).join('')}
+      </div>` : '';
+
     return `
-      <div class="post" style="animation-delay:${delay}s">
+      <div class="post" style="animation-delay:${delay}s" data-id="${esc(p.id)}">
         <div class="post-header">
-          <div class="avatar" style="background:${bg}">${esc(initials(p.name))}</div>
+          <div class="avatar" style="background:${bg}">${avatarHtml}</div>
           <div class="author">
-            <div class="author-name">${esc(p.name)}</div>
-            ${p.handle ? `<div class="author-handle">@${esc(p.handle)}</div>` : ''}
+            <div class="author-name">${esc(name)}</div>
+            ${handle ? `<div class="author-handle">@${esc(handle)}</div>` : ''}
           </div>
+          <span style="font-family:var(--mono);font-size:0.7rem;font-weight:700;color:#666;flex-shrink:0">${timeAgo(p.created_at)}</span>
         </div>
-        <div class="post-body">${esc(p.body)}</div>
+
+        ${p.content ? `<div class="post-body">${esc(p.content)}</div>` : ''}
+        ${codeHtml}
+        ${mediaHtml}
+        ${tagsHtml}
+
         <div class="post-footer">
-          <a class="view-btn" href="${esc(p.url)}" target="_blank" rel="noopener">view ↗</a>
+          <div class="post-stats">
+            <span class="stat">❤ ${p.likes_count ?? 0}</span>
+            <span class="stat">💬 ${p.comments_count ?? 0}</span>
+            <span class="stat">👁 ${p.views_count ?? 0}</span>
+          </div>
+          <a class="view-btn" href="${esc(postUrl)}" target="_blank" rel="noopener">view ↗</a>
         </div>
       </div>`;
   }
@@ -419,9 +421,9 @@
 
   function setDot(s)    { $dot.className = 'dot ' + s; }
   function setStatus(s) { $status.textContent = s; }
-  function setCount(n)  { $count.innerHTML = `${n} post${n!==1?'s':''}`; }
+  function setCount(n)  { $count.textContent = `${n} post${n !== 1 ? 's' : ''}`; }
   function stampTime()  {
-    $time.textContent = 'updated ' + new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+    $time.textContent = 'updated ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
   }
 
   function showSpinner() {
@@ -429,63 +431,89 @@
       <div class="state">
         <div class="state-icon"><span class="spin">⟳</span></div>
         <h3>Fetching posts…</h3>
-        <p>Racing proxies to genjutsu-social.vercel.app</p>
+        <p>Reaching out to genjutsu-social.vercel.app</p>
       </div>`;
   }
 
-  // ── LOAD ─────────────────────────────────────────────────────────────────
-  async function load(silent = false) {
-    if (!silent) showSpinner();
+  // ── INITIAL LOAD ─────────────────────────────────────────────────────────
+  async function load() {
+    showSpinner();
     setDot('loading'); setStatus('loading…');
 
     try {
-      const html  = await getHtml();
-      const posts = parse(html);
+      const data = await fetchFeed({ limit: 50 });
+      allPosts   = data.posts;
+      sinceTs    = data.meta.server_time;
 
-      if (posts.length === 0) {
-        $feed.innerHTML = `
-          <div class="state">
-            <div class="state-icon">空</div>
-            <h3>Feed is empty</h3>
-            <p>No posts right now — everything vanishes every 24h.<br><br>
-               <a href="${SOURCE}" target="_blank" rel="noopener">POST SOMETHING ↗</a></p>
-          </div>`;
-        setDot('live'); setStatus('connected'); setCount(0);
-        return;
-      }
-
-      $feed.innerHTML = posts.map((p, i) => card(p, i)).join('');
-      setDot('live');
-      setStatus(`live`);
-      setCount(posts.length);
+      renderAll();
+      setDot('live'); setStatus('live');
+      setCount(allPosts.length);
       stampTime();
-
     } catch (err) {
       console.error(err);
       setDot('error'); setStatus('error');
-      if (!silent) {
-        $feed.innerHTML = `
-          <div class="state">
-            <div class="state-icon">✕</div>
-            <h3>Could not load posts</h3>
-            <p>All CORS proxies timed out or failed. Try refreshing.<br><br>
-               <a href="${SOURCE}" target="_blank" rel="noopener">OPEN GENJUTSU DIRECTLY ↗</a></p>
-            <div id="debug-box" style="display:block">${debugLog.map(esc).join('<br>')}</div>
-          </div>`;
-      }
+      $feed.innerHTML = `
+        <div class="state">
+          <div class="state-icon">✕</div>
+          <h3>Could not load posts</h3>
+          <p>Failed to reach the API. Try refreshing.<br><br>
+             <a href="${SOURCE}" target="_blank" rel="noopener">OPEN GENJUTSU DIRECTLY ↗</a></p>
+        </div>`;
     }
   }
 
+  // ── SILENT POLL (incremental via `since`) ─────────────────────────────
+  async function poll() {
+    if (!sinceTs) return;
+    try {
+      const data = await fetchFeed({ since: sinceTs, limit: 50 });
+      if (data.posts.length > 0) {
+        // Prepend new posts, avoid duplicates
+        const existingIds = new Set(allPosts.map(p => p.id));
+        const newPosts    = data.posts.filter(p => !existingIds.has(p.id));
+        if (newPosts.length) {
+          allPosts = [...newPosts, ...allPosts];
+          renderAll();
+          setCount(allPosts.length);
+          stampTime();
+        }
+      }
+      sinceTs = data.meta.server_time;
+      setDot('live'); setStatus('live');
+    } catch (err) {
+      console.warn('Poll failed:', err.message);
+      setDot('error'); setStatus('error');
+    }
+  }
+
+  function renderAll() {
+    if (!allPosts.length) {
+      $feed.innerHTML = `
+        <div class="state">
+          <div class="state-icon">空</div>
+          <h3>Feed is empty</h3>
+          <p>No posts right now — everything vanishes every 24h.<br><br>
+             <a href="${SOURCE}" target="_blank" rel="noopener">POST SOMETHING ↗</a></p>
+        </div>`;
+      return;
+    }
+    $feed.innerHTML = allPosts.map((p, i) => card(p, i)).join('');
+  }
+
+  // ── REFRESH BUTTON ───────────────────────────────────────────────────────
   document.getElementById('refresh-btn').addEventListener('click', async function () {
     this.innerHTML = '<span class="spin">↻</span> fetching';
-    this.disabled = true;
-    await load(false);
+    this.disabled  = true;
+    allPosts = [];
+    sinceTs  = null;
+    await load();
     this.innerHTML = '↻ refresh';
-    this.disabled = false;
+    this.disabled  = false;
   });
 
-  load(false);
-  setInterval(() => load(true), REFRESH_MS);
+  // ── BOOT ─────────────────────────────────────────────────────────────────
+  load();
+  setInterval(poll, POLL_MS);
 </script>
 </body>
 </html>
