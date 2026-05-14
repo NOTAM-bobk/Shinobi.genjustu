@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { 
   Terminal, Search, RefreshCw, LayoutGrid, Code2, Image as ImageIcon, 
+// ... existing code 
   Activity, Heart, MessageSquare, ExternalLink, Play, ChevronDown, 
   ChevronUp, Maximize2, User
 } from 'lucide-react';
