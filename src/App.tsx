@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import , { useState, useEffect, useMemo } from 'react';
 import { 
   Terminal, Search, RefreshCw, LayoutGrid, Code2, Image as ImageIcon, 
   Activity, Heart, MessageSquare, ExternalLink, Play, ChevronDown, 
